@@ -28,7 +28,7 @@ VIDEO BACKGROUND
     left:0;
     width:100%;
     height:100%;
-    background:rgba(0,0,0,0.35);
+    background:rgba(0,0,0,0.15);
     z-index:-1;
 }
 
@@ -74,11 +74,19 @@ HEADER
 .header{
     width:100%;
     text-align:center;
-    padding:30px 0 10px 0;
-}
+    padding:15px 0 10px 0;
 
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    /* background: rgba(0,0,0,0.25); */
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+
+    position:sticky;
+    top:0;
+}
 .logo{
-    width:200px;
+    width:100px;
 }
 
 /* =========================
@@ -99,7 +107,7 @@ QR SECTION
     display:flex;
     justify-content:center;
     align-items:center;
-    margin:50px 0;
+    margin-top: 200px;
 }
 
 .qr{
@@ -130,13 +138,13 @@ BUTTON
 ========================= */
 
 .button{
-    background:#1e4f4c;
+    background:black;
     color:white;
     border:none;
     padding:18px 40px;
-    border-radius:40px;
+    border-radius:10px;
     cursor:pointer;
-    font-size:24px;
+    font-size:32px;
     transition:all 0.3s ease;
 }
 
