@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Anax Demo</title>
+<style>
+body{
+    font-family: Arial;
+    background:#0f172a;
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    margin:0;
+}
+
+.card{
+    text-align:center;
+    background:rgba(255,255,255,0.05);
+    padding:40px;
+    border-radius:12px;
+}
+
+button{
+    padding:10px 20px;
+    margin-top:20px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+<h1>Anax Demo Site</h1>
+<p>If you see this, GitHub Pages works.</p>
+
+<button onclick="hello()">Click Me</button>
+
+<p id="msg"></p>
+</div>
+
+<script>
+function hello(){
+    document.getElementById("msg").innerHTML="Javascript is working 🚀";
+}
+</script>
+
+</body>
+</html>
