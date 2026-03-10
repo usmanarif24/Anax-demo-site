@@ -8,16 +8,18 @@
 
 <style>
 
-/* VIDEO BACKGROUND */
+/* =========================
+VIDEO BACKGROUND
+========================= */
 
 .videoBackground{
     position:fixed;
     top:0;
     left:0;
     width:100%;
-    /* height:100%; */
+    height:100%;
     object-fit:cover;
-    z-index:-1;
+    z-index:-2;
 }
 
 .videoOverlay{
@@ -30,7 +32,9 @@
     z-index:-1;
 }
 
-/* make content readable */
+/* =========================
+GLOBAL
+========================= */
 
 body{
     margin:0;
@@ -38,7 +42,34 @@ body{
     color:white;
 }
 
-/* HEADER */
+/* =========================
+ANIMATIONS
+========================= */
+
+.fadeIn{
+    animation:fadeIn 1.5s ease forwards;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(-20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes floatQR{
+    0%{transform:translateY(0px);}
+    50%{transform:translateY(-15px);}
+    100%{transform:translateY(0px);}
+}
+
+/* =========================
+HEADER
+========================= */
 
 .header{
     width:100%;
@@ -50,7 +81,9 @@ body{
     width:200px;
 }
 
-/* MAIN LAYOUT */
+/* =========================
+MAIN LAYOUT
+========================= */
 
 .main{
     display:flex;
@@ -58,52 +91,63 @@ body{
     align-items:center;
 }
 
-/* QR AREA */
+/* =========================
+QR SECTION
+========================= */
 
 .qrSection{
     display:flex;
     justify-content:center;
     align-items:center;
-    margin-bottom:50px;
-    margin-top: 50px;
+    margin:50px 0;
 }
 
 .qr{
-    width: 640px;
+    width:640px;
+    animation:floatQR 6s ease-in-out infinite;
 }
 
-/* TEXT AREA */
+/* =========================
+TEXT AREA
+========================= */
 
 .bottomSection{
-    padding-bottom: 500px;
     display:flex;
     flex-direction:column;
     justify-content:center;
     align-items:center;
+    margin-bottom:120px;
 }
 
 .title{
     font-size:35px;
-    margin-bottom:50px;
-    margin-top: 50px;
+    margin:50px 0;
+    letter-spacing:4px;
 }
+
+/* =========================
+BUTTON
+========================= */
 
 .button{
     background:#1e4f4c;
     color:white;
     border:none;
-    padding:12px 25px;
-    border-radius:8px;
+    padding:18px 40px;
+    border-radius:40px;
     cursor:pointer;
-    font-size:35px;
+    font-size:24px;
+    transition:all 0.3s ease;
 }
 
 .button:hover{
-    opacity:0.9;
+    transform:scale(1.05);
+    box-shadow:0 10px 25px rgba(0,0,0,0.4);
 }
 
-
-/* FORM POPUP */
+/* =========================
+FORM POPUP
+========================= */
 
 .overlay{
     position:fixed;
@@ -118,17 +162,26 @@ body{
 }
 
 .formBox{
-    background:white;
-    padding:30px;
-    border-radius:10px;
-    width:300px;
+    backdrop-filter:blur(20px);
+    background:rgba(255,255,255,0.15);
+    border:1px solid rgba(255,255,255,0.3);
+    padding:40px;
+    border-radius:15px;
+    width:320px;
+    color:white;
+}
+
+.formBox h3{
+    margin-top:0;
 }
 
 .formBox input{
     width:100%;
-    padding:10px;
-    margin-bottom:10px;
-    border:1px solid #ccc;
+    padding:12px;
+    margin-bottom:15px;
+    border:1px solid rgba(255,255,255,0.4);
+    background:rgba(255,255,255,0.1);
+    color:white;
     border-radius:6px;
 }
 
@@ -148,8 +201,10 @@ body{
 
 <body>
 
-    <video autoplay muted loop playsinline class="videoBackground">
-    <source src="Background.mp4" type="video/mp4">
+<!-- VIDEO BACKGROUND -->
+
+<video autoplay muted loop playsinline class="videoBackground">
+<source src="Background.mp4" type="video/mp4">
 </video>
 
 <div class="videoOverlay"></div>
@@ -157,9 +212,11 @@ body{
 <!-- HEADER -->
 
 <div class="header">
-<img src="logo.png" class="logo">
+<img src="logo.png" class="logo fadeIn">
 </div>
 
+
+<!-- MAIN CONTENT -->
 
 <div class="main">
 
